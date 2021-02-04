@@ -1,0 +1,24 @@
+if peripheral.isPresent("right") then
+turtle.equipRight()
+turtle.equipRight()
+else 
+turtle.equipRight()
+end
+
+rednet.open("right")
+
+while true do
+id,msg = rednet.receive()
+
+if msg == "start" then
+ for i = 1,6 do
+  turtle.forward()
+ end
+end
+
+if msg == "return" then
+ for i = 1, 6 do
+  turtle.back()
+ end
+end
+end

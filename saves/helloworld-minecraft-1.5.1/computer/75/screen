@@ -1,0 +1,116 @@
+local mon = peripheral.wrap("top")
+mon.setTextScale(1)
+mon.setTextColor(colors.white)
+local button={}
+mon.setBackgroundColor(colors.black)
+
+function clearTable()
+   button = {}
+   mon.clear()
+end
+               
+-- Creates a new button with a name
+function initButton(name, func, xmin, xmax, ymin, ymax)
+   button[name] = {}
+   button[name]["func"] = func
+   button[name]["active"] = false
+   button[name]["xmin"] = xmin
+   button[name]["ymin"] = ymin
+   button[name]["xmax"] = xmax
+   button[name]["ymax"] = ymax
+end
+
+function fredClicked()
+   print("You clicked Fred")
+end
+
+function demoButton()
+   initButton("I am Fred", buttonClicked, 5, 25, 4, 8)
+end     
+
+-- Fills the button with color and text
+function fillButton(text, color, bData)
+   mon.setBackgroundColor(color)
+   -- The vertical center of the button
+   local yspot = math.floor((bData["ymin"] + bData["ymax"]) /2)
+   -- The horizontal space where the text should start
+   local xspot = math.floor((bData["xmax"] - bData["xmin"] - string.len(text)) /2) +1
+   for j = bData["ymin"], bData["ymax"] do
+      mon.setCursorPos(bData["xmin"], j)
+      if j == yspot then
+         for k = 0, bData["xmax"] - bData["xmin"] - string.len(text) +1 do
+            if k == xspot then
+               mon.write(text)
+            else
+               mon.write(" ")
+            end
+         end
+      else
+         for i = bData["xmin"], bData["xmax"] do
+            mon.write(" ")
+         end
+      end
+   end
+   mon.setBackgroundColor(colors.black)
+end
+     
+-- Refreshes the screen
+function screen()
+   local currColor
+   for name,data in pairs(button) do
+      local isOn = data["active"]
+      if isOn then currColor = colors.lime else currColor = colors.red end
+      fillButton(name, currColor, data)
+   end
+end
+
+-- Button functions --
+
+-- Toggles a button between active an inactive
+function toggleButton(name)
+   button[name]["active"] = not button[name]["active"]
+   screen()
+end     
+
+-- Causes a button to toggle for a short pulse
+function flash(name)
+   toggleButton(name)
+   sleep(0.15)
+   toggleButton(name)
+end
+
+-- Determines which button was clicked, if any                
+function checkxy(x, y)
+   for name, data in pairs(button) do
+      if y>=data["ymin"] and  y <= data["ymax"] then
+         if x>=data["xmin"] and x<= data["xmax"] then
+            data["func"]()
+            return true
+            --data["active"] = not data["active"]
+            --print(name)
+         end
+      end
+   end
+   return false
+end
+
+-- End button functions --
+
+-- Sets a header on the top center of the monitor
+function heading(text)
+   w, h = mon.getSize()
+   mon.setCursorPos((w-string.len(text))/2+1, 1)
+   mon.write(text)
+end
+
+-- Sets a text label at a specified position  
+function label(w, h, text)
+   mon.setCursorPos(w, h)
+   mon.write(text)
+end
+
+
+
+
+demoButton()
+

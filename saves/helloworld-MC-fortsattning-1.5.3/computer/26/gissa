@@ -1,0 +1,52 @@
+--Skapar en ny textrad på monitorn
+function newLine()
+x, y = monitor.getCursorPos()
+monitor.setCursorPos(2, y+1)
+end
+
+highscore = {2, 3, 6 ,10, 12, 15, 28, 20, 24, 30}
+-----------MONITOR KODEN--------------------------
+monitor = peripheral.wrap("left")
+monitor.clear()
+monitor.setCursorPos(2,1)
+monitor.setTextColor(colors.white)
+monitor.setTextScale(1.7)
+monitor.write("HIGHSCORE:")
+newLine()
+for i=1, 10 do
+ monitor.write(i..") "..highscore[i])
+ newLine()
+end
+------------MONITOR KODEN--------------------
+
+--Här skriver ni första delen av 
+--huvudkoden:
+
+
+
+
+------------MONITOR KODEN-------------------
+   monitor.clear()
+   monitor.setCursorPos(2,1)
+   monitor.setTextColor(colors.white)
+   monitor.write("HIGHSCORE:")
+   newLine()
+   for i=1, 10 do
+    if i == highscore[11] then
+     monitor.setTextColor(colors.green)
+    else
+     monitor.setTextColor(colors.white)
+    end
+    monitor.write(i..") "..highscore[i])
+    newLine()
+   end
+-------------MONITOR KODEN-----------------------   
+
+--Här skriver ni sista delen av 
+--huvudkoden:
+
+
+
+
+
+

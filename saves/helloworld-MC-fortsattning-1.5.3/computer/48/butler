@@ -1,0 +1,15 @@
+rednet.open("right")
+
+while true do
+id,msg = rednet.receive()
+
+if msg == "start" then
+ for i = 1,6 do
+  turtle.forward()
+ end
+elseif msg == "back" then
+    for i=1,6 do
+        turtle.back()
+    end
+end
+end

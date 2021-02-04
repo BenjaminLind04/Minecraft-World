@@ -1,0 +1,41 @@
+function plantera()
+    turtle.select(1)
+    turtle.placeDown()
+end
+
+function mata()
+    turtle.select(2)
+    for i=1, 3 do
+        turtle.placeDown()
+    end
+end
+
+turtle.up()
+turtle.forward()
+steg=1
+while steg < 5 do
+    for i=1, 5 do
+        if steg==1 then
+            turtle.digDown()
+            turtle.forward()
+        elseif steg==2 then
+            plantera()
+            turtle.back()
+            if i==5 then
+                turtle.forward()
+            end
+        elseif steg==3 then
+            mata()
+            turtle.forward()
+        elseif steg==4 then
+            turtle.digDown()
+            turtle.back()
+            if i==5 then
+                turtle.forward()
+            end
+        end
+    end
+    steg = steg+1
+end
+turtle.back()
+turtle.down()

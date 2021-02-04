@@ -1,0 +1,19 @@
+rednet.open("right")
+function fram()
+for i = 1, 5 do
+    turtle.forward()
+end
+end
+    
+
+while true do
+    id, msg= rednet.receive()
+    if msg == "square" then
+        for i = 1,4 do
+            fram()
+            turtle.turnRight()
+        end
+    end
+end
+        
+    

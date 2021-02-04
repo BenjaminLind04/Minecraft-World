@@ -1,0 +1,11 @@
+while true do
+print("Skriv det lösenord som ledaren ger dig om du klarat uppgiften")
+svar=read()
+if svar == "köket" then
+    redstone.setOutput("left", true)
+    sleep(5)
+    redstone.setOutput("left", false)
+else
+    print("Fel lösenord!, testa igen")
+end
+end

@@ -1,0 +1,4 @@
+rednet.open("right")
+while true do
+rednet.broadcast(read())
+end

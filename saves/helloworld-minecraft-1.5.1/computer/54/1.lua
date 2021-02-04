@@ -1,0 +1,2 @@
+variabel=read()
+print(variabel)

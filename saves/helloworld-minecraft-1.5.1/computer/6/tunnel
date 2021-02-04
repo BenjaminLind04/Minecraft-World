@@ -1,0 +1,11 @@
+for i=1,50,1 do
+  turtle.dig()
+  turtle.forward()
+  for i=1,4,1 do
+    turtle.digDown()
+    turtle.down()
+  end
+  for i=1,3,1 do
+    turtle.up()
+  end
+end

@@ -1,0 +1,197 @@
+{
+    "images":
+    {
+    	"header-bg": {
+    		"image" : "hw:colors/primary_transparent.png",
+    		"posX" : -2500,
+    		"posY" : 0,
+    		"width" : 5000,
+    		"height" : 32,
+    		"alignment" : "top_center"
+    	},
+
+    	"header-logo": {
+    		"image" : "hw:textures/hw_white_transparent.png",
+    		"posX" : 16,
+    		"posY" : 4,
+    		"width" : 108,
+    		"height" : 24,
+    		"alignment" : "top_left"
+    	},
+
+        "stevehead":
+        {
+            "image" : "hw:textures/steve.png",
+            "posX" : -28,
+            "posY" : 4,
+            "width" : 24,
+            "height" : 24,
+            "alignment" : "top_right"
+        },
+
+        "playerhead":
+        {
+            "image" : "web:https://minotar.net/helm/#username#/32.png",
+            "posX" : -28,
+            "posY" : 4,
+            "width" : 24,
+            "height" : 24,
+            "alignment" : "top_right"
+        },
+
+        "transparent":
+        {
+            "image" : "hw:colors/black_transparent.png",
+            "posX" : -80,
+            "posY" : -75,
+            "width" : 160,
+            "height" : 150,
+            "alignment" : "center"
+        },
+        
+        "minecraft":
+        {
+            "image" : "hw:textures/minecraft.png",
+            "posX" : -70,
+            "posY" : -65,
+            "width" : 140,
+            "height" : 50,
+            "alignment" : "center"
+        }
+    },
+    
+    "buttons":
+    {
+        "singleplayer":
+        {
+            "text" : "menu.singleplayer",
+            "posX" : -80,
+            "posY" : -5,
+            "width" : 160,
+            "height" : 20,
+            "alignment" : "center",
+            "texture" : "hw:textures/button_transparent.png",
+            "shadow" : false,
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "singleplayer"
+            }
+        },
+        
+        "multiplayer":
+        {
+            "text" : "menu.multiplayer",
+            "posX" : -80,
+            "posY" : 15,
+            "width" : 160,
+            "height" : 20,
+            "alignment" : "center",
+            "texture" : "hw:textures/button_transparent.png",
+            "shadow" : false,
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "multiplayer"
+            }
+        },
+            
+        "options":
+        {
+            "text" : "menu.options",
+            "posX" : -80,
+            "posY" : 35,
+            "width" : 160,
+            "height" : 20,
+            "alignment" : "center",
+            "texture" : "hw:textures/button_transparent.png",
+            "shadow" : false,
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "options"
+            }
+        },
+        
+        "quit":
+        {
+            "text" : "menu.quit",
+            "posX" : -80,
+            "posY" : 55,
+            "width" : 160,
+            "height" : 20,
+            "alignment" : "center",
+            "texture" : "hw:textures/button_transparent.png",
+            "shadow" : false,
+            "action" : 
+            {
+                "type" : "quit"
+            }
+        }
+    },
+    
+    "labels":
+    {
+        "mojang":
+        {
+            "text" : "Copyright Mojang AB. Do not distribute!",
+            "hoverText" : "§nCopyright Mojang AB. Do not distribute!",
+            "posX" : -197,
+            "posY" : -10,
+            "color" : -1,
+            "alignment" : "bottom_right",
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "credits"
+            }
+        },
+
+        "version":
+        {
+            "text" : "Minecraft #mcversion#",
+            "posX" : 2,
+            "posY" : -20,
+            "color" : -1,
+            "alignment" : "bottom_left"
+        },
+
+        "mods":
+        {
+            "text" : "Mods active: #modsactive#",
+            "hoverText" : "§nMods active: #modsactive#",
+            "posX" : 2,
+            "posY" : -10,
+            "color" : -1,
+            "alignment" : "bottom_left",
+            "action" : 
+            {
+                "type" : "openGui",
+                "gui" : "mods"
+            }
+        },
+
+        "playername":
+        {
+        	"text" : "Welcome\n§l#username#!",
+        	"posX" : -32,
+        	"posY" : 10,
+        	"color" : -1,
+            "anchor" : "end",
+            "alignment" : "top_right"
+        }
+    },
+    
+    "other":
+    { 
+        
+        "panorama":
+        {
+            "images" : "hw:panorama/panorama_%c.png",
+            "animate" : true,
+            "animationSpeed" : 5,
+            "blur" : true,
+            "gradient" : true
+        }
+    }
+}

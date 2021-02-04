@@ -1,0 +1,32 @@
+function newLine()
+ x,y = monitor.getCursorPos()
+ monitor.setCursorPos(0, y+1)
+end
+
+rednet.open("right")
+
+
+ monitor = peripheral.wrap("back")
+ monitor.clear()
+ monitor.setTextScale(5)
+ monitor.setBackgroundColor(colors.black)
+ monitor.setTextColor(colors.white)
+ monitor.setCursorPos(0,1)
+ monitor.write("         ")
+ newLine()
+ monitor.write("         ")
+ 
+ while true do
+ os.pullEvent("redstone")
+ if redstone.getInput("front") then
+ print("switiching on")
+  monitor.clear()
+  monitor.setCursorPos(0,1)
+  monitor.setBackgroundColor(colors.blue)
+  monitor.setTextColor(colors.black)
+  monitor.write("   Hello  ")
+  newLine()
+  monitor.write("   World  ")
+  end
+ 
+end

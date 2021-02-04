@@ -1,0 +1,28 @@
+function newLine()
+ x,y = monitor.getCursorPos()
+ monitor.setCursorPos(0, y+1)
+end
+
+rednet.open("right")
+
+while true do
+ monitor = peripheral.wrap("back")
+ monitor.clear()
+ monitor.setBackgroundColor(colors.black)
+ monitor.setCursorPos(0,1)
+ monitor.write("           ")
+ newLine()
+ monitor.write("           ")
+ id, msg = rednet.receive()
+ 
+ if redstone.getInput() == "front" then
+  monitor.setBackgroundColor(colors.blue)
+  monitor.setTextColor(colors.black)
+  monitor.setCursorPos(0,1)
+  monitor.setTextScale(5)
+  monitor.write("   Hello  ")
+  newLine()
+  monitor.write("   World  ")
+  end
+ 
+end

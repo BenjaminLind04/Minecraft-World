@@ -1,0 +1,21 @@
+--funktion för att öppna dörren
+function open()
+    redstone.setOutput("left", true)
+    sleep(10)
+    redstone.setOutput("left", false)
+end
+
+--Skriv en funktion som kollar hur mycket du 
+--behöver betala för att komma in.
+--Är man 7 och yngre eller 65 och äldre så får man
+--ett rabbateradpris
+--Annars så måste man betala originalpriset, 15kr 
+
+
+
+
+--Här skriver du huvudkoden som körs:
+
+
+
+        

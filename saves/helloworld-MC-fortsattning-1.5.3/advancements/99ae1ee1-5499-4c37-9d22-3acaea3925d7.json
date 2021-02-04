@@ -1,0 +1,9 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "deep_ocean": "2020-07-10 14:55:20 +0200",
+      "beaches": "2020-07-10 14:54:52 +0200"
+    },
+    "done": false
+  }
+}

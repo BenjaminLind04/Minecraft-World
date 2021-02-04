@@ -1,0 +1,65 @@
+function rad()
+ for i = 1,7 do
+  turtle.digDown()
+  turtle.forward()
+ end
+end
+
+function turnRight()
+ turtle.digDown()
+ turtle.turnRight()
+ turtle.forward()
+ turtle.digDown()
+ turtle.turnRight()
+end
+
+function turnLeft()
+ turtle.digDown()
+ turtle.turnLeft()
+ turtle.forward()
+ turtle.digDown()
+ turtle.turnLeft()
+end
+
+function floor()
+ rad()
+ turnRight()
+ rad()
+ turnLeft()
+ rad()
+ turnRight()
+ rad()
+ turnLeft()
+ rad()
+ turtle.digDown()
+end
+
+function ner()
+ turtle.down()
+ turtle.turnLeft()
+ turtle.turnLeft()
+end
+
+function pool(x)
+ for i = 1,x do
+  floor()
+  ner()
+ end
+end
+y = 0
+while y == 0 do
+
+print("Hur djup ska poolen vara?")
+x = tonumber(read())
+
+if x>10 then
+print("Poolen är för djup, välj ett nummer mellan 1 och 10 :)")
+else
+ pool(x)
+  for i = 1,x do
+   turtle.up()
+  end
+ y = 1 
+end
+
+end
