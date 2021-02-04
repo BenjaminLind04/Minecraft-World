@@ -1,6 +1,0 @@
-turtle.up()
-turtle.down()
-turtle.turnLeft()
-turtle.forward()
-turtle.back()
-turtle.right()

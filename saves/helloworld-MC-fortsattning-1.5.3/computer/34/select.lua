@@ -1,1 +1,0 @@
-turtle.select(1)

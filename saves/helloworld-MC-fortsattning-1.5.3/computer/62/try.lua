@@ -1,1 +1,0 @@
-redstone.setOutput("bottom",true)

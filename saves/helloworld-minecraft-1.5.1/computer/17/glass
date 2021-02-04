@@ -1,6 +1,0 @@
-print("vill du ha glass?")
-glassa = input()
-
-if glassa == "ja" then
-  print("Här får du glass")
-end

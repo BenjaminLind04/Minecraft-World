@@ -1,3 +1,0 @@
-turtle.place()
-turtle.back()
-
